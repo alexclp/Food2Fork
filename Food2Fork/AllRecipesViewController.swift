@@ -24,7 +24,7 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		self.tableView!.registerNib(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "recipeCell")
-		
+		self.title = "All recipes"
 		loadFirstPage()
 	}
 	
@@ -70,7 +70,8 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 					.responseImage { response in
 						if let image = response.result.value {
 							cell.recipeImageView?.image = image
-							cell.recipeImageView?.contentMode = .ScaleAspectFit
+							cell.recipeImageView?.contentMode = .ScaleAspectFill
+							cell.recipeImageView?.clipsToBounds = true
 						}
 				}
 			}

@@ -86,6 +86,7 @@ class DetailedRecipeViewController: UIViewController, UITableViewDataSource {
 		let cell = UITableViewCell.init(style: .Default, reuseIdentifier: "ingredientCell")
 		
 		cell.textLabel?.text = recipeDetails.ingredients![indexPath.row]
+		cell.selectionStyle = .None
 		
 		return cell
 	}
