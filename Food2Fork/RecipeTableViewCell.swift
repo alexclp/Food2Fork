@@ -9,5 +9,7 @@
 import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
-
+	@IBOutlet weak var recipeImageView: UIImageView?
+	@IBOutlet weak var recipeTitle: UILabel?
+	@IBOutlet weak var recipePublisher: UILabel?
 }

@@ -8,21 +8,25 @@
 
 import UIKit
 
-class AllRecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AllRecipesViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		
+		RecipeProvider.provideAllRecipesForPage("1") { (response) in
+			
+		}
 	}
 
 //	MARK: UITableView Data Source Methods
-	
+	/*
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
 		
-	}
+	}*/
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let rows = 0
