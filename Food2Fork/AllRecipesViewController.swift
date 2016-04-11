@@ -15,6 +15,7 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 	@IBOutlet weak var tableView: UITableView?
 	
 	var recipes = [Recipe]()
+	var lastPageLoaded = 1
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -22,8 +23,23 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 		
 		self.tableView!.registerNib(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "recipeCell")
 		
+		loadFirstPage()
+	}
+	
+//	MARK: Loading Data
+	
+	func loadFirstPage() {
 		RecipeProvider.provideAllRecipesForPage("1") { (response) in
 			self.recipes = response
+			self.tableView?.reloadData()
+		}
+	}
+	
+	func addNextPage() {
+		lastPageLoaded += 1
+		
+		RecipeProvider.provideAllRecipesForPage(String(lastPageLoaded)) { (response) in
+			self.recipes.appendContentsOf(response)
 			self.tableView?.reloadData()
 		}
 	}
@@ -71,6 +87,9 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		
+		if indexPath.row == recipes.count - 1 {
+			addNextPage()
+		}
 	}
 	
 }
