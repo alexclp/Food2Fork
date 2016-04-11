@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0F10D1A11CBBFAFF0023E548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D1A01CBBFAFF0023E548 /* AppDelegate.swift */; };
-		0F10D1A31CBBFAFF0023E548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D1A21CBBFAFF0023E548 /* ViewController.swift */; };
+		0F10D1A31CBBFAFF0023E548 /* AllRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D1A21CBBFAFF0023E548 /* AllRecipesViewController.swift */; };
 		0F10D1A61CBBFAFF0023E548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F10D1A41CBBFAFF0023E548 /* Main.storyboard */; };
 		0F10D1A81CBBFAFF0023E548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F10D1A71CBBFAFF0023E548 /* Assets.xcassets */; };
 		0F10D1AB1CBBFAFF0023E548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F10D1A91CBBFAFF0023E548 /* LaunchScreen.storyboard */; };
 		0F10D1B61CBBFAFF0023E548 /* Food2ForkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D1B51CBBFAFF0023E548 /* Food2ForkTests.swift */; };
 		0F10D1C11CBBFAFF0023E548 /* Food2ForkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10D1C01CBBFAFF0023E548 /* Food2ForkUITests.swift */; };
+		0FCF7D9A1CBC01460077BCD9 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF7D991CBC01460077BCD9 /* RecipeTableViewCell.swift */; };
+		0FCF7D9C1CBC017B0077BCD9 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCF7D9B1CBC017B0077BCD9 /* RecipeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		0F10D19D1CBBFAFF0023E548 /* Food2Fork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Food2Fork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F10D1A01CBBFAFF0023E548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F10D1A21CBBFAFF0023E548 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F10D1A21CBBFAFF0023E548 /* AllRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipesViewController.swift; sourceTree = "<group>"; };
 		0F10D1A51CBBFAFF0023E548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F10D1A71CBBFAFF0023E548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F10D1AA1CBBFAFF0023E548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		0F10D1BC1CBBFAFF0023E548 /* Food2ForkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Food2ForkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F10D1C01CBBFAFF0023E548 /* Food2ForkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food2ForkUITests.swift; sourceTree = "<group>"; };
 		0F10D1C21CBBFAFF0023E548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FCF7D991CBC01460077BCD9 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		0FCF7D9B1CBC017B0077BCD9 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				0F10D1A01CBBFAFF0023E548 /* AppDelegate.swift */,
-				0F10D1A21CBBFAFF0023E548 /* ViewController.swift */,
-				0F10D1A41CBBFAFF0023E548 /* Main.storyboard */,
+				0FCF7D971CBC00D90077BCD9 /* View Controller */,
+				0FCF7D981CBC00E00077BCD9 /* View */,
 				0F10D1A71CBBFAFF0023E548 /* Assets.xcassets */,
 				0F10D1A91CBBFAFF0023E548 /* LaunchScreen.storyboard */,
 				0F10D1AC1CBBFAFF0023E548 /* Info.plist */,
@@ -123,6 +127,24 @@
 				0F10D1C21CBBFAFF0023E548 /* Info.plist */,
 			);
 			path = Food2ForkUITests;
+			sourceTree = "<group>";
+		};
+		0FCF7D971CBC00D90077BCD9 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F10D1A21CBBFAFF0023E548 /* AllRecipesViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		0FCF7D981CBC00E00077BCD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F10D1A41CBBFAFF0023E548 /* Main.storyboard */,
+				0FCF7D991CBC01460077BCD9 /* RecipeTableViewCell.swift */,
+				0FCF7D9B1CBC017B0077BCD9 /* RecipeTableViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +254,7 @@
 				0F10D1AB1CBBFAFF0023E548 /* LaunchScreen.storyboard in Resources */,
 				0F10D1A81CBBFAFF0023E548 /* Assets.xcassets in Resources */,
 				0F10D1A61CBBFAFF0023E548 /* Main.storyboard in Resources */,
+				0FCF7D9C1CBC017B0077BCD9 /* RecipeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F10D1A31CBBFAFF0023E548 /* ViewController.swift in Sources */,
+				0FCF7D9A1CBC01460077BCD9 /* RecipeTableViewCell.swift in Sources */,
+				0F10D1A31CBBFAFF0023E548 /* AllRecipesViewController.swift in Sources */,
 				0F10D1A11CBBFAFF0023E548 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +506,7 @@
 				0F10D1C71CBBFAFF0023E548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F10D1C81CBBFAFF0023E548 /* Build configuration list for PBXNativeTarget "Food2ForkTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +515,7 @@
 				0F10D1CA1CBBFAFF0023E548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F10D1CB1CBBFAFF0023E548 /* Build configuration list for PBXNativeTarget "Food2ForkUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +524,7 @@
 				0F10D1CD1CBBFAFF0023E548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
