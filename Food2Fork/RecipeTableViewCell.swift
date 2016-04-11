@@ -12,4 +12,5 @@ class RecipeTableViewCell: UITableViewCell {
 	@IBOutlet weak var recipeImageView: UIImageView?
 	@IBOutlet weak var recipeTitle: UILabel?
 	@IBOutlet weak var recipePublisher: UILabel?
+	@IBOutlet weak var recipeIngredients: UITextView?
 }

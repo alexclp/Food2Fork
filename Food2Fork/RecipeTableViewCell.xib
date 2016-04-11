@@ -8,21 +8,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipeCell" rowHeight="80" id="czw-OV-qxp" customClass="RecipeTableViewCell" customModule="Food2Fork" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipeCell" rowHeight="150" id="czw-OV-qxp" customClass="RecipeTableViewCell" customModule="Food2Fork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czw-OV-qxp" id="XpR-vQ-iAu">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-mM-HUt">
                         <rect key="frame" x="8" y="6" width="87" height="68"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="87" id="7QD-AB-hw5"/>
+                            <constraint firstAttribute="width" constant="87" id="R78-Sx-9dn"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-Or-fse">
                         <rect key="frame" x="103" y="29" width="184" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Au3-jM-VSb"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -33,23 +36,33 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMX-xO-3gU">
+                        <rect key="frame" x="8" y="82" width="271" height="60"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aCF-in-R0R" firstAttribute="leading" secondItem="Cdq-Or-fse" secondAttribute="leading" id="6jo-sp-eRu"/>
-                    <constraint firstItem="aCF-in-R0R" firstAttribute="trailing" secondItem="XpR-vQ-iAu" secondAttribute="trailingMargin" id="BaX-4w-ky0"/>
-                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="top" secondItem="XpR-vQ-iAu" secondAttribute="topMargin" constant="-2" id="DOC-WL-2Hf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="aCF-in-R0R" secondAttribute="bottom" constant="38.5" id="DS6-l8-r1h"/>
-                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="centerY" secondItem="XpR-vQ-iAu" secondAttribute="centerY" id="P6G-Sq-5px"/>
-                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="top" secondItem="aCF-in-R0R" secondAttribute="top" id="TsJ-00-AYt"/>
-                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="leading" secondItem="XpR-vQ-iAu" secondAttribute="leadingMargin" id="ZVg-2P-u0e"/>
-                    <constraint firstAttribute="trailing" secondItem="Cdq-Or-fse" secondAttribute="trailing" id="b8g-Wa-IvM"/>
-                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="centerY" secondItem="Cdq-Or-fse" secondAttribute="centerY" id="cNO-TQ-sW7"/>
-                    <constraint firstItem="Cdq-Or-fse" firstAttribute="top" secondItem="XpR-vQ-iAu" secondAttribute="topMargin" constant="21" id="u5b-mc-XDP"/>
-                    <constraint firstItem="aCF-in-R0R" firstAttribute="leading" secondItem="Ngt-mM-HUt" secondAttribute="trailing" constant="8" symbolic="YES" id="x6B-Ba-rpB"/>
+                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="centerY" secondItem="Cdq-Or-fse" secondAttribute="centerY" id="5js-iD-X7W"/>
+                    <constraint firstItem="aCF-in-R0R" firstAttribute="trailing" secondItem="XpR-vQ-iAu" secondAttribute="trailingMargin" id="9rk-rI-T6R"/>
+                    <constraint firstItem="aCF-in-R0R" firstAttribute="trailing" secondItem="qMX-xO-3gU" secondAttribute="trailing" id="AA5-dP-BlL"/>
+                    <constraint firstAttribute="trailing" secondItem="Cdq-Or-fse" secondAttribute="trailing" id="GYO-Ee-1bA"/>
+                    <constraint firstItem="qMX-xO-3gU" firstAttribute="top" secondItem="Ngt-mM-HUt" secondAttribute="bottom" constant="8" symbolic="YES" id="MHI-8r-imk"/>
+                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="top" secondItem="aCF-in-R0R" secondAttribute="top" id="OjU-qQ-5px"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qMX-xO-3gU" secondAttribute="bottom" constant="-0.5" id="QLb-ie-vyA"/>
+                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="leading" secondItem="XpR-vQ-iAu" secondAttribute="leadingMargin" id="RiA-io-zFS"/>
+                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="leading" secondItem="qMX-xO-3gU" secondAttribute="leading" id="SOj-yq-Zjf"/>
+                    <constraint firstItem="qMX-xO-3gU" firstAttribute="top" secondItem="aCF-in-R0R" secondAttribute="bottom" constant="49" id="Vme-gf-Gkg"/>
+                    <constraint firstItem="qMX-xO-3gU" firstAttribute="top" secondItem="Cdq-Or-fse" secondAttribute="bottom" constant="32" id="fxE-ff-b7m"/>
+                    <constraint firstItem="Ngt-mM-HUt" firstAttribute="top" secondItem="XpR-vQ-iAu" secondAttribute="topMargin" constant="-2" id="i9z-Qg-GgM"/>
+                    <constraint firstItem="aCF-in-R0R" firstAttribute="leading" secondItem="Ngt-mM-HUt" secondAttribute="trailing" constant="8" symbolic="YES" id="kEU-Pi-SXc"/>
+                    <constraint firstItem="aCF-in-R0R" firstAttribute="leading" secondItem="Cdq-Or-fse" secondAttribute="leading" id="sqh-Vh-fcT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="recipeImageView" destination="Ngt-mM-HUt" id="zVH-lP-zJU"/>
+                <outlet property="recipeIngredients" destination="qMX-xO-3gU" id="xEq-tv-cB2"/>
                 <outlet property="recipePublisher" destination="Cdq-Or-fse" id="Nkg-7c-8Nv"/>
                 <outlet property="recipeTitle" destination="aCF-in-R0R" id="Vfg-G9-qIC"/>
             </connections>

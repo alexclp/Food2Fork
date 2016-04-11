@@ -16,6 +16,8 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 	
 	var recipes = [Recipe]()
 	var lastPageLoaded = 1
+	var currentSelecteRowIndex = -1
+	var cellIsTapped = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -68,6 +70,7 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 					.responseImage { response in
 						if let image = response.result.value {
 							cell.recipeImageView?.image = image
+							cell.recipeImageView?.contentMode = .ScaleAspectFit
 						}
 				}
 			}
@@ -81,6 +84,19 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 		
 		return rows
 	}
+
+	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		if indexPath.row == currentSelecteRowIndex {
+			if cellIsTapped == true {
+				cellIsTapped = false
+				return 150.0
+			} else {
+				cellIsTapped = true
+				return 80.0
+			}
+		}
+		return 80.0
+	}
 	
 //	MARK: UITableView Delegate Methods
 	
@@ -89,7 +105,12 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 		
 		if indexPath.row == recipes.count - 1 {
 			addNextPage()
-		}
+		} /*else {
+			currentSelecteRowIndex = indexPath.row
+			cellIsTapped = true
+			tableView.beginUpdates()
+			tableView.endUpdates()
+		}*/
 	}
 	
 }
