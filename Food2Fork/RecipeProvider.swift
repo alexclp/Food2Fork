@@ -25,21 +25,21 @@ class RecipeProvider: NSObject {
 				
 				case .Success(let data):
 					if let json = data as? Dictionary<NSObject, AnyObject> {
-						let recipes = json["recipes"] as! [[String : String]]
+						let recipes = json["recipes"] as! [[String : AnyObject]]
 						
 						for recipe in recipes {
 							let current = Recipe()
-							current.id = recipe["recipe_id"]
-							current.imageURL = recipe["image_url"]
-							current.publisher = recipe["publisher"]
-							current.title = recipe["title"]
-							current.webPageURL = recipe["f2f_url"]
+							current.id = recipe["recipe_id"] as? String
+							current.imageURL = recipe["image_url"] as? String
+							current.publisher = recipe["publisher"] as? String
+							current.title = recipe["title"] as? String
+							current.webPageURL = recipe["f2f_url"] as? String
 							
 							parsedRecipes.append(current)
 						}
 					}
 			}
-				
+			completionBlock(parsedRecipes)
 		}
 	}
 }
