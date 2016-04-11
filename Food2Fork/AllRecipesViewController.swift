@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
 
 class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
 
@@ -44,6 +46,22 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 			cell.recipeTitle?.text = currentRecipe.title
 			cell.recipePublisher?.text = currentRecipe.publisher
 			cell.recipeImageView?.image = UIImage(named: "placeholder.png")
+			
+			if let imageURL = currentRecipe.imageURL {
+				Alamofire.request(.GET, imageURL)
+					.responseImage { response in
+						debugPrint(response)
+						
+						print(response.request)
+						print(response.response)
+						debugPrint(response.result)
+						
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.recipeImageView?.image = image
+						}
+				}
+			}
 			
 			return cell
 		}
