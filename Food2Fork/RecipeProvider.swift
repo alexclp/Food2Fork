@@ -33,13 +33,37 @@ class RecipeProvider: NSObject {
 							current.imageURL = recipe["image_url"] as? String
 							current.publisher = recipe["publisher"] as? String
 							current.title = recipe["title"] as? String
-							current.webPageURL = recipe["f2f_url"] as? String
+							current.webPageURL = recipe["source_url"] as? String
 							
 							parsedRecipes.append(current)
 						}
 					}
 			}
 			completionBlock(parsedRecipes)
+		}
+	}
+	
+	class func provideRecipeDetailsForID(id: String, completionBlock: (RecipeDetails) -> Void) {
+		let urlString = basicForIDURL + apiKey + "&rId=\(id)"
+		
+		RecipeServer.sharedServer().GET(urlString) { (response) in
+			let details = RecipeDetails()
+			
+			switch response {
+				case .Failure(_): print("Failed to fetch data")
+				case .Success(let data):
+					if let json = data as? Dictionary<NSObject, AnyObject> {
+						let recipe = json["recipe"] as! [String : AnyObject]
+						
+						details.recipePublisher = recipe["publisher"] as? String
+						details.recipeID = recipe["recipe_id"] as? String
+						details.recipeImageURL = recipe["image_url"] as? String
+						details.recipeSourceURL = recipe["source_url"] as? String
+						details.recipeTitle = recipe["title"] as? String
+						details.ingredients = recipe["ingredients"] as? [String]
+					}
+			}
+			completionBlock(details)
 		}
 	}
 }

@@ -16,7 +16,7 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 	
 	var recipes = [Recipe]()
 	var lastPageLoaded = 1
-	var currentSelecteRowIndex = -1
+	var currentSelectedRowIndex = -1
 	var cellIsTapped = false
 	
 	override func viewDidLoad() {
@@ -86,7 +86,7 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 	}
 
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		if indexPath.row == currentSelecteRowIndex {
+		if indexPath.row == currentSelectedRowIndex {
 			if cellIsTapped == true {
 				cellIsTapped = false
 				return 150.0
@@ -105,12 +105,26 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 		
 		if indexPath.row == recipes.count - 1 {
 			addNextPage()
-		} /*else {
+		} else {
+			currentSelectedRowIndex = indexPath.row
+			performSegueWithIdentifier("showDetails", sender: nil)
+		}
+		
+		/*else {
 			currentSelecteRowIndex = indexPath.row
 			cellIsTapped = true
 			tableView.beginUpdates()
 			tableView.endUpdates()
 		}*/
+	}
+	
+//	MARK: Navigation
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showDetails" {
+			let destinationVC = segue.destinationViewController as! DetailedRecipeViewController
+			destinationVC.recipeID = recipes[currentSelectedRowIndex].id!
+		}
 	}
 	
 }
