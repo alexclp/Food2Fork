@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -73,70 +72,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-dT-m2l">
-                                <rect key="frame" x="0.0" y="64" width="600" height="202"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="202" id="t9C-H1-600"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwW-Lj-ahg">
-                                <rect key="frame" x="20" y="280" width="560" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="zNo-Ic-FeT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YF-kq-HhZ">
-                                <rect key="frame" x="20" y="312" width="560" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="4N1-9B-yxK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jLS-xV-SnT">
-                                <rect key="frame" x="0.0" y="382" width="600" height="218"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jLS-xV-SnT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BL8-Ql-nVm" id="eoN-lC-zts"/>
+                                    <outlet property="delegate" destination="BL8-Ql-nVm" id="oig-wG-EVQ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsR-pZ-gos">
-                                <rect key="frame" x="20" y="344" width="560" height="30"/>
-                                <state key="normal" title="Link"/>
-                                <connections>
-                                    <action selector="openRecipeSourceURL" destination="BL8-Ql-nVm" eventType="touchUpInside" id="514-Xv-Z8t"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MsR-pZ-gos" firstAttribute="top" secondItem="3YF-kq-HhZ" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ha-tP-PO8"/>
-                            <constraint firstItem="jLS-xV-SnT" firstAttribute="bottom" secondItem="kcT-VY-gfY" secondAttribute="top" id="7TG-VZ-7yw"/>
-                            <constraint firstItem="TWC-dT-m2l" firstAttribute="leading" secondItem="Bim-IO-FGs" secondAttribute="leading" id="A85-5g-02W"/>
-                            <constraint firstItem="TwW-Lj-ahg" firstAttribute="top" secondItem="TWC-dT-m2l" secondAttribute="bottom" constant="14" id="Ari-d5-3fI"/>
-                            <constraint firstItem="TwW-Lj-ahg" firstAttribute="leading" secondItem="Bim-IO-FGs" secondAttribute="leadingMargin" id="Avz-Gv-7LQ"/>
-                            <constraint firstAttribute="trailing" secondItem="TWC-dT-m2l" secondAttribute="trailing" id="CQD-oD-Hv1"/>
-                            <constraint firstItem="TwW-Lj-ahg" firstAttribute="leading" secondItem="3YF-kq-HhZ" secondAttribute="leading" id="DTo-yM-IHC"/>
-                            <constraint firstItem="TWC-dT-m2l" firstAttribute="trailing" secondItem="jLS-xV-SnT" secondAttribute="trailing" id="HDC-h6-vVW"/>
-                            <constraint firstItem="3YF-kq-HhZ" firstAttribute="top" secondItem="TwW-Lj-ahg" secondAttribute="bottom" constant="8" symbolic="YES" id="L1d-Un-s8j"/>
-                            <constraint firstItem="3YF-kq-HhZ" firstAttribute="trailing" secondItem="MsR-pZ-gos" secondAttribute="trailing" id="TFs-IW-XZG"/>
-                            <constraint firstItem="TWC-dT-m2l" firstAttribute="top" secondItem="OUZ-hm-X0d" secondAttribute="bottom" id="aeN-FJ-xRE"/>
-                            <constraint firstItem="TWC-dT-m2l" firstAttribute="leading" secondItem="jLS-xV-SnT" secondAttribute="leading" id="bjX-Ub-rfa"/>
-                            <constraint firstItem="jLS-xV-SnT" firstAttribute="top" secondItem="MsR-pZ-gos" secondAttribute="bottom" constant="8" symbolic="YES" id="e4C-F5-yGh"/>
-                            <constraint firstItem="3YF-kq-HhZ" firstAttribute="leading" secondItem="MsR-pZ-gos" secondAttribute="leading" id="k7v-BY-4A4"/>
-                            <constraint firstItem="TWC-dT-m2l" firstAttribute="centerX" secondItem="TwW-Lj-ahg" secondAttribute="centerX" id="oNF-kg-f58"/>
-                            <constraint firstItem="TwW-Lj-ahg" firstAttribute="trailing" secondItem="3YF-kq-HhZ" secondAttribute="trailing" id="wJM-kM-pVf"/>
+                            <constraint firstAttribute="trailing" secondItem="jLS-xV-SnT" secondAttribute="trailing" id="IjP-dS-qLu"/>
+                            <constraint firstItem="jLS-xV-SnT" firstAttribute="top" secondItem="OUZ-hm-X0d" secondAttribute="bottom" id="Jlg-hn-lVo"/>
+                            <constraint firstItem="jLS-xV-SnT" firstAttribute="leading" secondItem="Bim-IO-FGs" secondAttribute="leading" id="K1a-e0-luC"/>
+                            <constraint firstItem="jLS-xV-SnT" firstAttribute="bottom" secondItem="kcT-VY-gfY" secondAttribute="top" id="nbg-gW-GGP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ingredientsTableView" destination="jLS-xV-SnT" id="aVN-XM-y4u"/>
-                        <outlet property="recipeImage" destination="TWC-dT-m2l" id="aCb-4Q-NIS"/>
-                        <outlet property="recipePublisher" destination="3YF-kq-HhZ" id="goe-iN-K2u"/>
-                        <outlet property="recipeTitle" destination="TwW-Lj-ahg" id="AwQ-fr-ZP5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibl-8v-5cP" userLabel="First Responder" sceneMemberID="firstResponder"/>

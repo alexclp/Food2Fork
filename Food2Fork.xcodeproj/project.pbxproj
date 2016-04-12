@@ -22,6 +22,8 @@
 		0FCF7DA61CBC2B950077BCD9 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCF7DA51CBC2B950077BCD9 /* placeholder.png */; };
 		0FCF7DA81CBC44590077BCD9 /* DetailedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF7DA71CBC44590077BCD9 /* DetailedRecipeViewController.swift */; };
 		0FCF7DAA1CBC45860077BCD9 /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF7DA91CBC45860077BCD9 /* RecipeDetails.swift */; };
+		0FCF7DAC1CBC6FBF0077BCD9 /* DetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF7DAB1CBC6FBF0077BCD9 /* DetailsHeaderTableViewCell.swift */; };
+		0FCF7DAE1CBC6FE30077BCD9 /* DetailsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCF7DAD1CBC6FE30077BCD9 /* DetailsHeaderTableViewCell.xib */; };
 		5F3EDD72FC5AAE1B67AE33A3 /* Pods_Food2Fork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083964B105A07DC7ABC63B6B /* Pods_Food2Fork.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		0FCF7DA51CBC2B950077BCD9 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		0FCF7DA71CBC44590077BCD9 /* DetailedRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedRecipeViewController.swift; sourceTree = "<group>"; };
 		0FCF7DA91CBC45860077BCD9 /* RecipeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
+		0FCF7DAB1CBC6FBF0077BCD9 /* DetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0FCF7DAD1CBC6FE30077BCD9 /* DetailsHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		3B2DACDBAB1ED21AEE46895B /* Pods-Food2Fork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food2Fork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food2Fork/Pods-Food2Fork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +167,8 @@
 			children = (
 				0F10D1A41CBBFAFF0023E548 /* Main.storyboard */,
 				0FCF7D991CBC01460077BCD9 /* RecipeTableViewCell.swift */,
+				0FCF7DAB1CBC6FBF0077BCD9 /* DetailsHeaderTableViewCell.swift */,
+				0FCF7DAD1CBC6FE30077BCD9 /* DetailsHeaderTableViewCell.xib */,
 				0FCF7D9B1CBC017B0077BCD9 /* RecipeTableViewCell.xib */,
 				0F10D1A91CBBFAFF0023E548 /* LaunchScreen.storyboard */,
 			);
@@ -313,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F10D1AB1CBBFAFF0023E548 /* LaunchScreen.storyboard in Resources */,
+				0FCF7DAE1CBC6FE30077BCD9 /* DetailsHeaderTableViewCell.xib in Resources */,
 				0F10D1A81CBBFAFF0023E548 /* Assets.xcassets in Resources */,
 				0F10D1A61CBBFAFF0023E548 /* Main.storyboard in Resources */,
 				0FCF7DA61CBC2B950077BCD9 /* placeholder.png in Resources */,
@@ -389,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCF7DAC1CBC6FBF0077BCD9 /* DetailsHeaderTableViewCell.swift in Sources */,
 				0FCF7D9F1CBC103F0077BCD9 /* RecipeServer.swift in Sources */,
 				0FCF7D9A1CBC01460077BCD9 /* RecipeTableViewCell.swift in Sources */,
 				0FCF7DA81CBC44590077BCD9 /* DetailedRecipeViewController.swift in Sources */,
