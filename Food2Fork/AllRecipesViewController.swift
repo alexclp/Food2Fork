@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import Alamofire
+import SwiftSpinner
 
 class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
 
@@ -31,18 +32,21 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 //	MARK: Loading Data
 	
 	func loadFirstPage() {
+		SwiftSpinner.show("Loading data...")
 		RecipeProvider.provideAllRecipesForPage("1") { (response) in
 			self.recipes = response
 			self.tableView?.reloadData()
+			SwiftSpinner.hide()
 		}
 	}
 	
 	func addNextPage() {
 		lastPageLoaded += 1
-		
+		SwiftSpinner.show("Loading data...")
 		RecipeProvider.provideAllRecipesForPage(String(lastPageLoaded)) { (response) in
 			self.recipes.appendContentsOf(response)
 			self.tableView?.reloadData()
+			SwiftSpinner.hide()
 		}
 	}
 

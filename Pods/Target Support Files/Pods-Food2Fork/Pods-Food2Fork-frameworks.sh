@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Food2Fork/Alamofire.framework"
   install_framework "Pods-Food2Fork/AlamofireImage.framework"
+  install_framework "Pods-Food2Fork/SwiftSpinner.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Food2Fork/Alamofire.framework"
   install_framework "Pods-Food2Fork/AlamofireImage.framework"
+  install_framework "Pods-Food2Fork/SwiftSpinner.framework"
 fi

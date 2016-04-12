@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SafariServices
+import SwiftSpinner
 
 class DetailedRecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
@@ -27,9 +28,11 @@ class DetailedRecipeViewController: UIViewController, UITableViewDataSource, UIT
     }
 	
 	func loadDataForRecipe() {
+		SwiftSpinner.show("Loading data...")
 		RecipeProvider.provideRecipeDetailsForID(recipeID) { (response) in
 			self.recipeDetails = response
 			self.ingredientsTableView?.reloadData()
+			SwiftSpinner.hide()
 		}
 	}
 	
