@@ -85,7 +85,9 @@ class DetailedRecipeViewController: UIViewController, UITableViewDataSource, UIT
 			
 			cell.textLabel?.text = recipeDetails.ingredients![indexPath.row - 1]
 			cell.selectionStyle = .None
-			cell.textLabel?.adjustsFontSizeToFitWidth = true
+			cell.textLabel?.lineBreakMode = .ByWordWrapping
+			cell.textLabel?.numberOfLines = 0
+			cell.textLabel?.font = UIFont(name: "Helvetica", size: 17.0)
 			
 			return cell
 		}
@@ -95,7 +97,7 @@ class DetailedRecipeViewController: UIViewController, UITableViewDataSource, UIT
 		if indexPath.row == 0 {
 			return 300.0
 		} else {
-			return 44.0
+			return 60.0
 		}
 	}
 }
