@@ -31,6 +31,7 @@ class DetailedRecipeViewController: UIViewController, UITableViewDataSource, UIT
 		SwiftSpinner.show("Loading data...")
 		RecipeProvider.provideRecipeDetailsForID(recipeID) { (response) in
 			self.recipeDetails = response
+			self.title = self.recipeDetails.recipeTitle
 			self.ingredientsTableView?.reloadData()
 			SwiftSpinner.hide()
 		}
