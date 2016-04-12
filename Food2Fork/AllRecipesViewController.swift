@@ -18,7 +18,6 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 	var recipes = [Recipe]()
 	var lastPageLoaded = 1
 	var currentSelectedRowIndex = -1
-	var cellIsTapped = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -89,19 +88,6 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 		
 		return rows
 	}
-
-	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		if indexPath.row == currentSelectedRowIndex {
-			if cellIsTapped == true {
-				cellIsTapped = false
-				return 150.0
-			} else {
-				cellIsTapped = true
-				return 80.0
-			}
-		}
-		return 80.0
-	}
 	
 //	MARK: UITableView Delegate Methods
 	
@@ -114,13 +100,6 @@ class AllRecipesViewController: UIViewController, UITabBarDelegate, UITableViewD
 			currentSelectedRowIndex = indexPath.row
 			performSegueWithIdentifier("showDetails", sender: nil)
 		}
-		
-		/*else {
-			currentSelecteRowIndex = indexPath.row
-			cellIsTapped = true
-			tableView.beginUpdates()
-			tableView.endUpdates()
-		}*/
 	}
 	
 //	MARK: Navigation
